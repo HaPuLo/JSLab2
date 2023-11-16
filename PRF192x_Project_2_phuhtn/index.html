@@ -6,19 +6,53 @@
 <body>
     <h1> Tính toán</h1>
     <div class="container">
-        <input class = "input-box" placeholder="Giá trị 1">
-        <input class = "input-box" placeholder="Giá trị 2">
+        <input class = "input-box" placeholder="Giá trị 1" id="firstNumber">
+        <input class = "input-box" placeholder="Giá trị 2" id="secondNumber">
     </div>
     <div class="container">
-        <button class="button" onclick="appendSymbol('+')">+</button>
-        <button class="button" onclick="appendSymbol('-')">-</button>
-        <button class="button" onclick="appendSymbol('*')">*</button>
-        <button class="button" onclick="appendSymbol('/')">/</button>
+        <button class="button" onclick="getElementAdd()">+</button>
+        <button class="button" onclick="getElementSubst()">-</button>
+        <button class="button" onclick="getElementMulti()">*</button>
+        <button class="button" onclick="getElementDevice()">/</button>
     </div>
     <div class="container">
         <strong>Output:</strong> 
-        <input class="input-box" placeholder="Ket qua">
+        <input class="input-box" placeholder="Ket qua" id="result">
     </div>
+    <div class="container">
+        <button class = "button-clear" onclick="clearFields()">Clear</button>
+    </div>
+    <script>
+        function getElementAdd(){
+            var x = parseInt(document.getElementById("firstNumber").value);
+            var y = parseInt(document.getElementById("secondNumber").value);
+            document.getElementById("result").value = x + y;
+            console.log(x);
+        }
+        function getElementSubst(){
+            var x = parseInt(document.getElementById("firstNumber").value);
+            var y = parseInt(document.getElementById("secondNumber").value);
+            document.getElementById("result").value = x - y;
+            console.log(x);
+        }
+        function getElementMulti(){
+            var x = parseInt(document.getElementById("firstNumber").value);
+            var y = parseInt(document.getElementById("secondNumber").value);
+            document.getElementById("result").value = x * y;
+            console.log(x);
+        }
+        function getElementDevice(){
+            var x = parseInt(document.getElementById("firstNumber").value);
+            var y = parseInt(document.getElementById("secondNumber").value);
+            document.getElementById("result").value = x / y;
+            console.log(x);
+        }
+        function clearFields() {
+            document.getElementById("firstNumber").value = "";
+            document.getElementById("secondNumber").value = "";
+            document.getElementById("result").value = "";
+        }
+    </script>
 
 </body>
 </html>
